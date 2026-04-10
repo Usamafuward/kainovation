@@ -1,0 +1,111 @@
+/* src/app/wordpress-styles.css */
+
+/* Target images within the prose-rendered content */
+.prose .alignleft {
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose .alignright {
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose .aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+/* Clear floats after aligned elements to prevent layout breaks */
+.prose .alignleft:after,
+.prose .alignright:after,
+.prose .aligncenter:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styling for WordPress image captions */
+.prose .wp-caption {
+  max-width: 100%; /* Ensure it doesn't overflow its container */
+  margin-bottom: 1.5em;
+}
+
+.prose .wp-caption img {
+  margin-bottom: 0.5em; /* Space between image and caption text */
+  border: 1px solid #e2e8f0; /* Optional: adds a light border */
+  padding: 4px;
+  border-radius: 0.5rem;
+}
+
+.prose .wp-caption-text {
+  font-size: 0.9em;
+  color: #64748b; /* A slightly muted text color */
+  text-align: center;
+  font-style: italic;
+}
+
+/* Ensure embedded videos are responsive */
+.prose iframe,
+.prose video {
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.prose .wp-video {
+    margin: 1.5em 0;
+    max-width: 100%;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2.25em;
+    margin-bottom: 1em;
+}
+
+.prose h1 {
+    font-size: 2.25rem;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+}
+
+.prose h3 {
+    font-size: 1.625rem;
+}
+
+.prose h4 {
+    font-size: 1.5rem;
+}
+
+.prose h5 {
+    font-size: 1.25rem;
+}
+
+.prose h6 {
+    font-size: 1rem;
+}
+
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.prose table th,
+.prose table td {
+    padding: 0.75em;
+    border: 2px solid #e2e8f0; /* Light border for table cells */
+    text-align: left;
+}
