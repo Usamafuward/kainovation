@@ -59,7 +59,7 @@ export default function Services() {
       id: "data-engineering",
     },
     {
-      title: "Machine Learning",
+      title: "Applied AI",
       description:
         "Harness the power of AI to predict future outcomes and automate decision-making. Our ML solutions turn your data into a competitive advantage through intelligent automation.",
       icon: FiCpu,
@@ -71,10 +71,10 @@ export default function Services() {
         "NLP Solutions",
       ],
       image: machine_learning,
-      id: "machine-learning",
+      id: "applied-ai",
     },
     {
-      title: "Software Engineering",
+      title: "Platform Engineering",
       description:
         "Develop scalable, secure, and high-performance applications tailored to your business needs. Our software solutions integrate seamlessly with your existing systems and drive innovation.",
       icon: FiCode,
@@ -86,7 +86,7 @@ export default function Services() {
         "DevOps Automation",
       ],
       image: software_engineering,
-      id: "software-engineering",
+      id: "platform-engineering",
     },
   ];
 
@@ -119,7 +119,7 @@ export default function Services() {
               className="text-xs sm:text-sm md:text-base font-medium"
               style={{ color: "#10064C" }}
             >
-              Expertise
+              How We Work
             </span>
           </motion.div>
 
@@ -130,11 +130,7 @@ export default function Services() {
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-            We provide a truly end-to-end offering, from initial concept to ongoing management. We specialize in{" "}
-            <span className="font-semibold" style={{ color: "#10064C" }}>
-              AI-powered data solutions
-            </span>{" "}
-            and comprehensive product delivery that unlock deep business insights and drive competitive advantage.
+            From architecture to deployment, we own the full delivery lifecycle so you don&apos;t have to.
           </p>
         </motion.div>
 
@@ -157,8 +153,8 @@ export default function Services() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-md sm:shadow-lg">
                 <FiZap className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">1. Concept & Branding</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Initial concept inception for start-ups or branding strategy and creative development for established businesses.</p>
+              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">1. Discovery & Architecture</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Requirements gathering, system design, and technical roadmap definition.</p>
             </motion.div>
             
             <motion.div 
@@ -176,8 +172,8 @@ export default function Services() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-md sm:shadow-lg">
                 <FiCode className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">2. Product Creation</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Platform development, back-end engineering, and cutting-edge software solutions built for scale.</p>
+              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">2. Engineering & Development</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Full-stack development, backend systems, data pipelines, and scalable infrastructure.</p>
             </motion.div>
             
             <motion.div 
@@ -195,8 +191,8 @@ export default function Services() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-md sm:shadow-lg">
                 <FiArrowRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">3. Delivery & Insights</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Final client delivery paired with real-time performance insights to ensure maximum impact.</p>
+              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">3. Deployment & QA</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Rigorous testing, CI/CD pipelines, and production-grade delivery.</p>
             </motion.div>
             
             <motion.div 
@@ -214,8 +210,8 @@ export default function Services() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-md sm:shadow-lg">
                 <FiDatabase className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">4. Ongoing Management</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Continuous maintenance, marketing, and management of the product, so you don&apos;t have to.</p>
+              <h3 className="font-bold text-xl text-gray-800 mb-2 sm:mb-3">4. Support & Maintenance</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Ongoing monitoring, system updates, and technical support.</p>
             </motion.div>
           </div>
         </div>

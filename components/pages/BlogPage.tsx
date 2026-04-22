@@ -198,6 +198,12 @@ export default function BlogPage() {
         const formattedPosts: FormattedPost[] = wpPosts.map((post: WPPost) => {
           const featuredMedia = post._embedded?.["wp:featuredmedia"]?.[0];
           const categoriesEmbedded = post._embedded?.["wp:term"]?.[0] || [];
+          
+          // Change specific post's category if matches the condition
+          let categoryName = categoriesEmbedded[0]?.name || "Uncategorized";
+          if (categoryName === "Uncategorized" && post.title.rendered.includes("Why AI ‘Inbreeding’")) {
+            categoryName = "AI";
+          }
           const category =
             categoriesEmbedded.find((term: WPTerm) => term.taxonomy === "category")
               ?.name || "Uncategorized";

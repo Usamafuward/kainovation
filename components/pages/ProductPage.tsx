@@ -48,7 +48,7 @@ const productsData: Product[] = [
     statusColor: "from-blue-500 to-indigo-600"
   },
   {
-    name: "Invisiq",
+    name: "Privacy Preserving LLM",
     description:
       "A secure intermediary platform that anonymises sensitive data before sending prompts to LLMs like ChatGPT, ensuring data privacy and compliance while preserving conversational context.",
     icon: FiLock,
@@ -359,17 +359,19 @@ export default function ProductsPage() {
                 whileHover={{ y: -10 }}
               >
                 {/* Status Badge */}
-                <motion.div
-                  className={`absolute -top-2 -right-2 z-20 px-3 py-1 rounded-full text-xs font-bold shadow-lg bg-linear-to-r ${product.statusColor} text-white`}
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.5,
-                  }}
-                >
-                  {product.status}
-                </motion.div>
+                {product.status && (
+                  <motion.div
+                    className={`absolute -top-2 -right-2 z-20 px-3 py-1 rounded-full text-xs font-bold shadow-lg bg-linear-to-r ${product.statusColor} text-white`}
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: index * 0.5,
+                    }}
+                  >
+                    {product.status}
+                  </motion.div>
+                )}
 
                 {/* Main Card */}
                 <motion.div
@@ -504,6 +506,122 @@ export default function ProductsPage() {
               </motion.div>
             ))}
           </motion.div>
+
+        {/* Product Details Section - InsurePulse Preview */}
+        <motion.div
+          className="mt-16 lg:mt-24 p-8 bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={cardVariants}
+        >
+          {/* Background grid for detail section */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-size-[2rem_2rem]" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 items-center">
+            <div>
+              <div className="inline-flex items-center bg-blue-50/50 backdrop-blur-sm border border-blue-200 rounded-full px-4 py-1.5 mb-6">
+                <FiBarChart2 className="mr-2 text-blue-600" />
+                <span className="text-sm font-medium text-blue-700">
+                  Featured Platform
+                </span>
+              </div>
+
+              <h3 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6">
+                InsurePulse Dashboard Preview
+              </h3>
+
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Experience real-time analytics designed specifically for insurance operations. Monitor claims, analyze risk profiles, and generate compliance reports instantly.
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                {["Real-time claim tracking", "Fraud detection algorithms", "Automated regulatory reporting"].map((item, i) => (
+                  <motion.li 
+                    key={i} 
+                    className="flex items-center text-gray-800"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 + (i * 0.1) }}
+                  >
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 shrink-0">
+                      <FiZap className="text-blue-600 text-xs" />
+                    </div>
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            {/* UI Mockup - InsurePulse */}
+            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-gray-200 shadow-2xl bg-[#FFFFFF]">
+              {/* Browser/App Header */}
+              <div className="h-10 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center px-4">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="mx-auto bg-[#FFFFFF] border border-[#E2E8F0] rounded-md h-6 w-1/2 flex items-center px-3">
+                  <FiSearch className="text-gray-400 text-xs mr-2" />
+                  <div className="h-2 bg-gray-200 rounded w-1/3"></div>
+                </div>
+              </div>
+
+              {/* Dashboard Content */}
+              <div className="p-6 flex flex-col h-[calc(100%-40px)] gap-4">
+                {/* Top Row */}
+                <div className="flex justify-between items-center mb-2">
+                  <div className="h-4 w-32 bg-gray-200 rounded"></div>
+                  <div className="flex gap-2">
+                    <div className="h-6 w-24 bg-blue-50 border border-blue-100 rounded"></div>
+                    <div className="h-6 w-8 bg-[#F8FAFC] border border-[#E2E8F0] rounded"></div>
+                  </div>
+                </div>
+
+                {/* KPI Cards */}
+                <div className="grid grid-cols-3 gap-4">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-4 h-24 flex flex-col justify-between">
+                      <div className="flex justify-between items-start">
+                        <div className="h-2 w-16 bg-gray-300 rounded"></div>
+                        <div className={`w-6 h-6 rounded-md flex items-center justify-center ${i === 1 ? 'bg-blue-100 text-blue-600' : i === 2 ? 'bg-green-100 text-green-600' : 'bg-purple-100 text-purple-600'}`}>
+                          {i === 1 ? <FiTrendingUp className="text-xs" /> : i === 2 ? <FiShield className="text-xs" /> : <FiLayers className="text-xs" />}
+                        </div>
+                      </div>
+                      <div>
+                        <div className="h-5 w-20 bg-gray-300 rounded mb-1"></div>
+                        <div className="h-2 w-12 bg-gray-200 rounded"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Chart Area */}
+                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex-1 mt-2 p-4">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="h-3 w-24 bg-gray-300 rounded"></div>
+                    <div className="h-3 w-32 bg-gray-200 rounded"></div>
+                  </div>
+                  {/* Simulated Chart */}
+                  <div className="h-full flex items-end gap-2 pb-2">
+                    {[40, 70, 45, 90, 65, 55, 80, 50, 75, 60, 85, 95].map((h, i) => (
+                      <motion.div 
+                        key={i} 
+                        className="w-full bg-linear-to-t from-blue-600 to-sky-400 rounded-t-sm opacity-80"
+                        initial={{ height: 0 }}
+                        whileInView={{ height: `${h}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: i * 0.05 }}
+                      ></motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
         </div>
       </section>
     </main>

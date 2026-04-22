@@ -376,12 +376,12 @@ export default function CTAWithSchedulePopup() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="bg-linear-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                Unlock the Power of Your
+                Ready to Build
               </span>
               <br className="hidden sm:block" />
               <span className="sm:hidden">{" "}</span>
               <span className="bg-linear-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
-                Business Data
+                Something?
               </span>
             </motion.h2>
 
@@ -393,9 +393,7 @@ export default function CTAWithSchedulePopup() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Transform your business with AI-powered insights, automated
-              processes, and data-driven strategies. Let&apos;s build the future
-              together.
+              We engineer data systems and software that work at scale. Let&apos;s scope your project.
             </motion.p>
 
             {/* Contact Info */}

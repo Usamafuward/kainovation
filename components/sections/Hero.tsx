@@ -70,7 +70,7 @@ export default function Hero() {
             >
               <FiZap className="text-sky-400 mr-2" />
               <span className="text-sm font-medium text-sky-300">
-                AI-Powered Business Intelligence
+                Software & Data Engineering
               </span>
             </motion.div>
 
@@ -93,10 +93,7 @@ export default function Hero() {
               className="text-md sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               variants={itemVariants}
             >
-              We harness the power of{' '}
-              <span className="text-sky-400 font-semibold">Data</span> and{' '}
-              <span className="text-blue-400 font-semibold">AI</span> to deliver 
-              real-time insights that transform your business. Our approach centres on a truly end-to-end service offering, one that considers every dimension of a client&apos;s brand journey. From initial concept and brand inception through to platform development, back-end management, real-time performance insights, and final client delivery, we take ownership of the entire process so our clients don&apos;t have to.
+              We build data infrastructure, AI systems, and software products. We deliver them end-to-end, from architecture to deployment.
             </motion.p>
 
             {/* Features */}

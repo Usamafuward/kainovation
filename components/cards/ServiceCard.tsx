@@ -99,7 +99,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           whileHover="hover"
         >
           <motion.div
-            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-linear-to-br ${gradient} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md sm:shadow-lg`}
+            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md sm:shadow-lg`}
             variants={iconVariants}
           >
             <Icon className="text-white text-xl sm:text-2xl" />
@@ -118,19 +118,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           {features.map((feature, featureIndex) => (
             <motion.div
               key={feature}
-              className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/60 backdrop-blur-sm rounded-lg border border-white/50 shadow-sm hover:shadow-md"
+              className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-blue-50/60 backdrop-blur-sm rounded-lg border border-blue-100/50 shadow-sm hover:shadow-md"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: featureIndex * 0.1 }}
               whileHover={{
-                backgroundColor: "rgba(255,255,255,0.8)",
+                backgroundColor: "rgba(239,246,255,0.8)",
               }}
             >
               <div
-                className={`w-2 h-2 bg-linear-to-r ${gradient} rounded-full`}
+                className={`w-2 h-2 bg-blue-600 rounded-full`}
               />
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+              <span className="text-xs sm:text-sm font-medium text-blue-900">
                 {feature}
               </span>
             </motion.div>
@@ -147,7 +147,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         >
           {/* Gradient Background */}
           <motion.div
-            className={`absolute inset-0 bg-linear-to-br ${gradient} rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl transform rotate-3 sm:rotate-4 md:rotate-5 lg:rotate-6`}
+            className={`absolute inset-0 bg-blue-600 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl transform rotate-3 sm:rotate-4 md:rotate-5 lg:rotate-6`}
             animate={{ rotate: [3, 5, 3] }}
             transition={{
               duration: 4,

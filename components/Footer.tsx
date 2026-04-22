@@ -34,10 +34,10 @@ const footerLinks = {
 
 const serviceLinks = [
   { name: 'Data Engineering', href: '/services#data-engineering' },
-  { name: 'Machine Learning', href: '/services#machine-learning' },
-  { name: 'Software Engineering', href: '/services#software-engineering' },
+  { name: 'Applied AI', href: '/services#applied-ai' },
+  { name: 'Platform Engineering', href: '/services#platform-engineering' },
   { name: 'Resource Augmentation', href: '/services#resource-augmentation' },
-  { name: 'Business Intelligence', href: '/services#business-intelligence' }
+  { name: 'Analytics & Reporting', href: '/services#analytics-reporting' }
 ];
 
 const containerVariants = {
@@ -324,9 +324,7 @@ export default function Footer() {
                 </motion.h2>
 
                 <p className="text-blue-100 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                  We are a global technology company specializing in AI-powered
-                  data solutions that deliver transformative insights and
-                  operational excellence.
+                  A software and data engineering company building systems that scale.
                 </p>
 
                 <div className="flex space-x-3 sm:space-x-4">

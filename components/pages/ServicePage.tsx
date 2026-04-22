@@ -77,7 +77,7 @@ const servicesData: Service[] = [
     description:
       "Build robust data pipelines and architectures that scale with your business. From legacy systems to modern cloud solutions, we engineer your data infrastructure for optimal performance.",
     icon: FiDatabase,
-    gradient: "from-violet-500 to-purple-600",
+    gradient: "from-blue-500 to-indigo-600",
     features: [
       "ETL/ELT Pipelines",
       "Cloud Data Lakes",
@@ -88,11 +88,11 @@ const servicesData: Service[] = [
     id: "data-engineering",
   },
   {
-    title: "Machine Learning",
+    title: "Applied AI",
     description:
       "Harness the power of AI to predict future outcomes and automate decision-making. Our ML solutions turn your data into a competitive advantage through intelligent automation.",
     icon: FiCpu,
-    gradient: "from-orange-500 to-red-600",
+    gradient: "from-blue-500 to-indigo-600",
     features: [
       "Predictive Analytics",
       "Neural Networks",
@@ -100,14 +100,14 @@ const servicesData: Service[] = [
       "NLP Solutions",
     ],
     image: machine_learning,
-    id: "machine-learning",
+    id: "applied-ai",
   },
   {
-    title: "Software Engineering",
+    title: "Platform Engineering",
     description:
       "Develop scalable, secure, and high-performance applications tailored to your business needs. Our software solutions integrate seamlessly with your existing systems and drive innovation.",
     icon: FiCode,
-    gradient: "from-cyan-500 to-blue-600",
+    gradient: "from-blue-500 to-indigo-600",
     features: [
       "Full-Stack Development",
       "API Integrations",
@@ -115,14 +115,14 @@ const servicesData: Service[] = [
       "DevOps Automation",
     ],
     image: software_engineering,
-    id: "software-engineering",
+    id: "platform-engineering",
   },
   {
     title: "Resource Augmentation",
     description:
       "Scale your team with our expert developers and data scientists. We provide skilled professionals who integrate seamlessly into your projects, ensuring rapid delivery and high quality.",
     icon: FiUsers,
-    gradient: "from-pink-500 to-rose-600",
+    gradient: "from-blue-500 to-indigo-600",
     features: [
       "On-Demand Talent",
       "Flexible Engagement Models",
@@ -133,11 +133,11 @@ const servicesData: Service[] = [
     id: "resource-augmentation",
   },
   {
-    title: "Business Intelligence",
+    title: "Analytics & Reporting",
     description:
       "Transform raw data into actionable insights with cutting-edge visualization and analytics platforms. We create powerful dashboards that reveal hidden patterns and drive strategic decisions.",
     icon: FiTrendingUp,
-    gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-blue-500 to-indigo-600",
     features: [
       "Azure Synapse Analytics",
       "Power BI Dashboards",
@@ -145,7 +145,7 @@ const servicesData: Service[] = [
       "Custom Visualizations",
     ],
     image: business_inteligence,
-    id: "business-intelligence",
+    id: "analytics-reporting",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function ServicesPage() {
             >
               <FiZap className="text-sky-400 mr-2" />
               <span className="text-sm font-medium text-sky-300">
-                Comprehensive AI & Data Solutions
+                What We Do
               </span>
             </motion.div>
 
@@ -235,9 +235,7 @@ export default function ServicesPage() {
               className="text-md sm:text-lg md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              From data engineering to AI-powered insights, we provide
-              end-to-end solutions that transform your business operations and
-              drive unprecedented growth.
+              Data engineering, machine learning, software development, and business intelligence: built to production standard.
             </motion.p>
 
             {/* Service Categories */}
@@ -800,30 +798,20 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Enhanced badge */}
-            <motion.div
-              className="inline-flex items-center bg-linear-to-r from-blue-500/10 to-indigo-500/10 backdrop-blur-sm border border-blue-500/20 rounded-full px-6 py-3 mb-8"
-            >
-              <FiUsers className="mr-2 text-blue-600" />
-              <span className="text-sm font-medium text-blue-700">
-                Trusted Partnership Network
+            <div className="inline-flex items-center bg-linear-to-r from-blue-500/10 to-indigo-500/10 backdrop-blur-sm border border-blue-500/20 rounded-full px-6 py-2 mb-6">
+              <span
+                className="text-base font-medium"
+                style={{ color: "#10064C" }}
+              >
+                Clients
               </span>
-            </motion.div>
+            </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6">
-              <span className="bg-linear-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
-                Trusted By
-              </span>
-              <br />
-              <span className="bg-linear-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
-                Industry Leaders
+              <span className="bg-linear-to-r from-[#10064C] to-[#3B82F6] bg-clip-text text-transparent">
+                Organisations we&apos;ve built for.
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We&apos;re proud to work with innovative companies across various
-              industries, delivering exceptional results that drive business
-              transformation.
-            </p>
           </motion.div>
 
           {/*Client Logo Section */}

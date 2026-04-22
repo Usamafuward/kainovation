@@ -34,7 +34,7 @@ const products: Product[] = [
     status: "Beta",
   },
   {
-    name: "Invisiq",
+    name: "Privacy Preserving LLM",
     description:
       "A secure intermediary platform that anonymises sensitive data before sending prompts to LLMs like ChatGPT, ensuring data privacy and compliance while preserving conversational context.",
     icon: FiLock,
@@ -151,17 +151,19 @@ export default function Products() {
               whileHover={{ y: -10 }}
             >
               {/* Status Badge */}
-              <motion.div
-                className="absolute -top-2 -right-2 z-20 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-xs font-bold shadow-md sm:shadow-lg bg-linear-to-r from-blue-500 to-indigo-600 text-white"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.5,
-                }}
-              >
-                {product.status}
-              </motion.div>
+              {product.status && (
+                <motion.div
+                  className="absolute -top-2 -right-2 z-20 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-xs font-bold shadow-md sm:shadow-lg bg-linear-to-r from-blue-500 to-indigo-600 text-white"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.5,
+                  }}
+                >
+                  {product.status}
+                </motion.div>
+              )}
 
               {/* Main Card */}
               <motion.div

@@ -68,7 +68,7 @@ export default function Clients() {
               className="text-xs sm:text-sm md:text-base font-medium"
               style={{ color: "#10064C" }}
             >
-              Trusted Partners
+              Clients
             </span>
           </motion.div>
 
@@ -78,8 +78,7 @@ export default function Clients() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-lg sm:max-w-2xl mx-auto">
-            Empowering businesses across industries with advanced data solutions
-            and AI-driven insights
+            Organisations we&apos;ve built for.
           </p>
         </motion.div>
 
