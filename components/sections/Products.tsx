@@ -6,6 +6,7 @@ import {
   FiLock,
   FiBarChart2,
   FiTrendingUp,
+  FiFileText,
 } from "react-icons/fi";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ interface Product {
   gradient: string;
   features: string[];
   status: string;
+  image?: string;
 }
 
 const products: Product[] = [
@@ -32,9 +34,10 @@ const products: Product[] = [
       "ETL Pipelines with SQL/Python",
     ],
     status: "Beta",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
   },
   {
-    name: "Privacy Preserving LLM",
+    name: "PRIVACY LLM",
     description:
       "A secure intermediary platform that anonymises sensitive data before sending prompts to LLMs like ChatGPT, ensuring data privacy and compliance while preserving conversational context.",
     icon: FiLock,
@@ -46,20 +49,22 @@ const products: Product[] = [
       "Policy Compliance",
     ],
     status: "Beta",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
   },
   {
-    name: "Marketing Copilot",
+    name: "MULTIFORM",
     description:
-      "AI marketing solution that generates complete campaigns from a simple prompt, including visuals, copy, and strategy. Automatically tracks performance and reallocates budget for optimal ROI.",
-    icon: FiTrendingUp,
+      "Intelligent OCR tool that extracts key data from diverse documents, including handwritten and printed content, for compliance, processing, or archival needs.",
+    icon: FiFileText,
     gradient: "from-blue-500 to-indigo-600",
     features: [
-      "Campaign Generation",
-      "Visual & Copy AI",
-      "Performance Tracking",
-      "Auto Budget Optimization",
+      "Multi-format Document Support",
+      "Handwritten & Printed Text",
+      "Data Extraction",
+      "High Accuracy Layout Handling",
     ],
     status: "Completed",
+    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80"
   },
 ];
 
@@ -257,19 +262,29 @@ export default function Products() {
                     </div>
                   </div>
 
-                  {/* Action Button */}
-                  <motion.button
-                    className={`w-full bg-linear-to-r ${product.gradient} text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl flex items-center justify-center space-x-2 shadow-md sm:shadow-lg text-sm sm:text-base cursor-pointer`}
-                    whileHover={{
-                      scale: 1.02,
-                      boxShadow: "0px 8px 20px -5px rgba(0,0,0,0.15)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => alert(`Visual showcase for ${product.name} coming soon!`)}
-                  >
-                    <span>View Project Visual</span>
-                    <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </motion.button>
+                  {/* UI Screenshot replacing the button if available */}
+                  {product.image ? (
+                    <div className="w-full h-32 sm:h-40 md:h-48 rounded-xl overflow-hidden shadow-inner border border-gray-100 group-hover:shadow-lg transition-all duration-300">
+                      <img 
+                        src={product.image} 
+                        alt={`${product.name} UI`} 
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+                      />
+                    </div>
+                  ) : (
+                    <motion.button
+                      className={`w-full bg-linear-to-r ${product.gradient} text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl flex items-center justify-center space-x-2 shadow-md sm:shadow-lg text-sm sm:text-base cursor-pointer`}
+                      whileHover={{
+                        scale: 1.02,
+                        boxShadow: "0px 8px 20px -5px rgba(0,0,0,0.15)",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => alert(`Visual showcase for ${product.name} coming soon!`)}
+                    >
+                      <span>View Project Visual</span>
+                      <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  )}
                 </div>
 
                 {/* Floating Elements */}

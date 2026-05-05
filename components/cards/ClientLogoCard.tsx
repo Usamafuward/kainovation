@@ -6,7 +6,6 @@ import dbsa from "@/public/assets/dbsa.svg";
 import fairfirst from "@/public/assets/fairfirst.png";
 import healthhelper from "@/public/assets/healthhelper.png";
 import impact from "@/public/assets/impact-labs.png";
-import meu from "@/public/assets/meu-labs.png";
 import beakbook from "@/public/assets/beakbook.png";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -14,7 +13,7 @@ import { StaticImageData } from "next/image";
 
 interface ClientLogo {
   name: string;
-  src: StaticImageData;
+  src?: StaticImageData;
 }
 
 const clientLogos: ClientLogo[] = [
@@ -26,8 +25,13 @@ const clientLogos: ClientLogo[] = [
   { name: "Fairfirst", src: fairfirst },
   { name: "HealthHelper", src: healthhelper },
   { name: "Impact Labs", src: impact },
-  { name: "MEU Labs", src: meu },
   { name: "Beakbook", src: beakbook },
+  { name: "Dataline" },
+  { name: "Alignify" },
+  { name: "Tap" },
+  { name: "Kap" },
+  { name: "Multiform" },
+  { name: "Ceylon Heaven" }
 ];
 const duplicatedLogos = [...clientLogos, ...clientLogos];
 
@@ -91,11 +95,15 @@ export default function ClientLogoCard() {
 
               {/* Client logo */}
               <div className="relative z-10 p-3 sm:p-4 w-full h-full flex items-center justify-center border-2 border-blue-500 rounded-2xl">
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  className="object-contain max-h-16 sm:max-h-20 max-w-[80%]"
-                />
+                {logo.src ? (
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    className="object-contain max-h-16 sm:max-h-20 max-w-[80%]"
+                  />
+                ) : (
+                  <span className="font-bold text-lg text-slate-700 text-center">{logo.name}</span>
+                )}
               </div>
             </motion.div>
           </motion.div>

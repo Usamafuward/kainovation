@@ -15,7 +15,6 @@ import {
 } from "react-icons/fi";
 import { StaticImageData } from "next/image";
 import business_inteligence from "@/public/assets/photos/business_intelligence.png";
-import data_engineering from "@/public/assets/photos/data_engineering.png";
 import machine_learning from "@/public/assets/photos/machine_learning.png";
 import software_engineering from "@/public/assets/photos/software_engineering.png";
 import resource_augmentation from "@/public/assets/photos/resource_augmentation.png";
@@ -73,7 +72,7 @@ const testimonials: Testimonial[] = [
 
 const servicesData: Service[] = [
   {
-    title: "Data Engineering",
+    title: "Data Engineering & BI",
     description:
       "Build robust data pipelines and architectures that scale with your business. From legacy systems to modern cloud solutions, we engineer your data infrastructure for optimal performance.",
     icon: FiDatabase,
@@ -84,7 +83,7 @@ const servicesData: Service[] = [
       "Stream Processing",
       "Data Warehousing",
     ],
-    image: data_engineering,
+    image: business_inteligence,
     id: "data-engineering",
   },
   {
@@ -118,21 +117,6 @@ const servicesData: Service[] = [
     id: "platform-engineering",
   },
   {
-    title: "Resource Augmentation",
-    description:
-      "Scale your team with our expert developers and data scientists. We provide skilled professionals who integrate seamlessly into your projects, ensuring rapid delivery and high quality.",
-    icon: FiUsers,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "On-Demand Talent",
-      "Flexible Engagement Models",
-      "Domain Expertise",
-      "Rapid Onboarding",
-    ],
-    image: resource_augmentation,
-    id: "resource-augmentation",
-  },
-  {
     title: "Analytics & Reporting",
     description:
       "Transform raw data into actionable insights with cutting-edge visualization and analytics platforms. We create powerful dashboards that reveal hidden patterns and drive strategic decisions.",
@@ -146,6 +130,21 @@ const servicesData: Service[] = [
     ],
     image: business_inteligence,
     id: "analytics-reporting",
+  },
+  {
+    title: "Resource Augmentation",
+    description:
+      "Scale your team with our expert developers and data scientists. We provide skilled professionals who integrate seamlessly into your projects, ensuring rapid delivery and high quality.",
+    icon: FiUsers,
+    gradient: "from-blue-500 to-indigo-600",
+    features: [
+      "On-Demand Talent",
+      "Flexible Engagement Models",
+      "Domain Expertise",
+      "Rapid Onboarding",
+    ],
+    image: resource_augmentation,
+    id: "resource-augmentation",
   },
 ];
 
@@ -426,25 +425,31 @@ export default function ServicesPage() {
 
                   <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
                     {[
-                      { name: "Python", color: "yellow-600", bg: "yellow-50" },
-                      {
-                        name: "Azure Data Factory",
-                        color: "blue-600",
-                        bg: "blue-50",
-                      },
-                      { name: "Pentaho", color: "orange-600", bg: "orange-50" },
+                      { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+                      { name: "Azure Data Factory", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" },
+                      { name: "Pentaho", src: "https://upload.wikimedia.org/wikipedia/commons/2/23/Pentaho_Logo.png" },
+                      { name: "Snowflake", src: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" },
+                      { name: "Apache Spark", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" },
+                      { name: "Databricks", src: "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" },
                     ].map((tech) => (
                       <motion.div
                         key={tech.name}
-                        className={`bg-white border-2 border-gray-200 rounded-2xl px-6 py-3 shadow-lg hover:shadow-xl cursor-pointer bg-${tech.bg}/30`}
+                        className="bg-white border-2 border-gray-200 rounded-2xl p-4 shadow-lg hover:shadow-xl cursor-pointer w-24 h-24 flex items-center justify-center relative group"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                       >
-                        <span
-                          className={`font-bold text-${tech.color} text-lg`}
-                        >
+                        <img 
+                          src={tech.src} 
+                          alt={`${tech.name} logo`} 
+                          className="w-full h-full object-contain p-2"
+                          onError={(e) => {
+                            // Fallback if image fails
+                            (e.target as HTMLImageElement).src = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg";
+                          }}
+                        />
+                        <div className="absolute -bottom-8 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                           {tech.name}
-                        </span>
+                        </div>
                       </motion.div>
                     ))}
                   </div>

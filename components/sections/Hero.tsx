@@ -70,7 +70,7 @@ export default function Hero() {
             >
               <FiZap className="text-sky-400 mr-2" />
               <span className="text-sm font-medium text-sky-300">
-                Software & Data Engineering
+                Next-Gen Data & AI Product Engineering
               </span>
             </motion.div>
 
@@ -93,7 +93,8 @@ export default function Hero() {
               className="text-md sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               variants={itemVariants}
             >
-              We build data infrastructure, AI systems, and software products. We deliver them end-to-end, from architecture to deployment.
+              We build Data infrastructure, AI systems, and Software Products.<br/>
+              We deliver them end-to-end, from architecture to deployment.
             </motion.p>
 
             {/* Features */}

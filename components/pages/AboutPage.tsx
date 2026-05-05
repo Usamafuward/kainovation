@@ -273,12 +273,6 @@ export default function AboutPage() {
                 <p className="text-lg text-gray-600 leading-relaxed">
                   What sets us apart? We take full ownership of your product journey from brand inception and architecture design to real-time performance insights and ongoing management. We do the heavy lifting so you don&apos;t have to.
                 </p>
-                
-                <div className="flex gap-4 pt-2">
-                  <a href="https://meulabs.org" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-blue-600 hover:text-blue-800 underline">Visit Meu Labs</a>
-                  <span className="text-gray-300">|</span>
-                  <a href="#" className="text-sm font-semibold text-blue-600 hover:text-blue-800 underline">Explore Our Outsourcing Solutions</a>
-                </div>
               </motion.div>
             </motion.div>
           </div>

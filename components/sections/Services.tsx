@@ -11,9 +11,8 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import { StaticImageData } from "next/image";
-// import business_inteligence from "@/public/assets/photos/business_intelligence.png";
+import business_inteligence from "@/public/assets/photos/business_intelligence.png";
 import software_engineering from "@/public/assets/photos/software_engineering.png";
-import data_engineering from "@/public/assets/photos/data_engineering.png";
 import machine_learning from "@/public/assets/photos/machine_learning.png";
 import ServiceCard from "@/components/cards/ServiceCard";
 
@@ -44,7 +43,7 @@ export default function Services() {
     //   image: business_inteligence,
     // },
     {
-      title: "Data Engineering",
+      title: "Data Engineering & BI",
       description:
         "Build robust data pipelines and architectures that scale with your business. From legacy systems to modern cloud solutions, we engineer your data infrastructure for optimal performance.",
       icon: FiDatabase,
@@ -55,7 +54,7 @@ export default function Services() {
         "Stream Processing",
         "Data Warehousing",
       ],
-      image: data_engineering,
+      image: business_inteligence,
       id: "data-engineering",
     },
     {

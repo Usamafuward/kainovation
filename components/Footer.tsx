@@ -33,11 +33,11 @@ const footerLinks = {
 };
 
 const serviceLinks = [
-  { name: 'Data Engineering', href: '/services#data-engineering' },
+  { name: 'Data Engineering & BI', href: '/services#data-engineering' },
   { name: 'Applied AI', href: '/services#applied-ai' },
   { name: 'Platform Engineering', href: '/services#platform-engineering' },
-  { name: 'Resource Augmentation', href: '/services#resource-augmentation' },
-  { name: 'Analytics & Reporting', href: '/services#analytics-reporting' }
+  { name: 'Analytics & Reporting', href: '/services#analytics-reporting' },
+  { name: 'Resource Augmentation', href: '/services#resource-augmentation' }
 ];
 
 const containerVariants = {

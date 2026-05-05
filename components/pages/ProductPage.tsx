@@ -28,6 +28,7 @@ interface Product {
   features: string[];
   status: string;
   statusColor: string;
+  image?: string;
 }
 
 // Data for the products with enhanced information
@@ -45,10 +46,11 @@ const productsData: Product[] = [
       "ETL Pipelines with SQL/Python",
     ],
     status: "Beta",
-    statusColor: "from-blue-500 to-indigo-600"
+    statusColor: "from-blue-500 to-indigo-600",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
   },
   {
-    name: "Privacy Preserving LLM",
+    name: "PRIVACY LLM",
     description:
       "A secure intermediary platform that anonymises sensitive data before sending prompts to LLMs like ChatGPT, ensuring data privacy and compliance while preserving conversational context.",
     icon: FiLock,
@@ -60,25 +62,11 @@ const productsData: Product[] = [
       "Policy Compliance",
     ],
     status: "Beta",
-    statusColor: "from-blue-500 to-indigo-600"
+    statusColor: "from-blue-500 to-indigo-600",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
   },
   {
-    name: "Marketing Copilot",
-    description:
-      "AI marketing solution that generates complete campaigns from a simple prompt, including visuals, copy, and strategy. Automatically tracks performance and reallocates budget for optimal ROI.",
-    icon: FiTrendingUp,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "Campaign Generation",
-      "Visual & Copy AI",
-      "Performance Tracking",
-      "Auto Budget Optimization",
-    ],
-    status: "Completed",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
-  {
-    name: "Document OCR Solution",
+    name: "MULTIFORM",
     description:
       "Intelligent OCR tool that extracts key data from diverse documents, including handwritten and printed content, for compliance, processing, or archival needs.",
     icon: FiFileText,
@@ -90,68 +78,9 @@ const productsData: Product[] = [
       "High Accuracy Layout Handling",
     ],
     status: "Completed",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
-  {
-    name: "SAP Entry Automation for Invoices",
-    description:
-      "Automates extraction and formatting of invoice data for SAP and spreadsheet use. Delivers accurate results even with low-quality scans.",
-    icon: FiFilePlus,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "Invoice Data Extraction",
-      "SAP-ready Output",
-      "OCR for Poor Scans",
-      "Reduces Manual Entry",
-    ],
-    status: "Beta",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
-  {
-    name: "AI Insurance Agent",
-    description:
-      "Virtual agent that explains insurance policies, coverage, and terms in simple language, escalating complex issues to human agents as needed.",
-    icon: FiShield,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "Policy Explanation",
-      "User-friendly Conversations",
-      "Escalation to Human Agents",
-      "Trustworthy Support",
-    ],
-    status: "Beta",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
-  {
-    name: "AI Receptionist",
-    description:
-      "Voice-enabled assistant for appointment scheduling across various sectors, handling bookings, confirmations, and calendar updates in real time.",
-    icon: FiCalendar,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "Voice-enabled Booking",
-      "Real-time Calendar Sync",
-      "Multiple Appointment Types",
-      "High-volume Scheduling",
-    ],
-    status: "Beta",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
-  {
-    name: "Support AI Assistant",
-    description:
-      "Conversational AI that provides real-time, context-aware support via chat and voice by integrating with your internal documentation and resources, reducing dependency on human agents.",
-    icon: FiMessageCircle,
-    gradient: "from-blue-500 to-indigo-600",
-    features: [
-      "Voice & Chat Support",
-      "Knowledge Base Integration",
-      "Real-time Guidance",
-      "Customer & Employee Support",
-    ],
-    status: "Completed",
-    statusColor: "from-blue-500 to-indigo-600"
-  },
+    statusColor: "from-blue-500 to-indigo-600",
+    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80"
+  }
 ];
 
 export default function ProductsPage() {
@@ -470,17 +399,27 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Action Button */}
-                    {/* <motion.button
-                      className={`w-full bg-linear-to-r ${product.gradient} text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-lg`}
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0px 8px 20px -5px rgba(0,0,0,0.15)",
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span>Learn More</span>
-                      <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </motion.button> */}
+                    {product.image ? (
+                      <div className="w-full h-40 rounded-xl overflow-hidden shadow-inner border border-gray-100 group-hover:shadow-lg transition-all duration-300 mt-4">
+                        <img 
+                          src={product.image} 
+                          alt={`${product.name} UI`} 
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+                        />
+                      </div>
+                    ) : (
+                      <motion.button
+                        className={`w-full bg-linear-to-r ${product.gradient} text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 shadow-lg mt-4`}
+                        whileHover={{
+                          scale: 1.02,
+                          boxShadow: "0px 8px 20px -5px rgba(0,0,0,0.15)",
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span>Learn More</span>
+                        <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                      </motion.button>
+                    )}
                   </div>
 
                   {/* Floating Elements */}
@@ -555,7 +494,7 @@ export default function ProductsPage() {
             </div>
 
             {/* UI Mockup - InsurePulse */}
-            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-gray-200 shadow-2xl bg-[#FFFFFF]">
+            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-gray-200 shadow-2xl bg-[#FFFFFF] group">
               {/* Browser/App Header */}
               <div className="h-10 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center px-4">
                 <div className="flex space-x-2">
@@ -563,62 +502,12 @@ export default function ProductsPage() {
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
-                <div className="mx-auto bg-[#FFFFFF] border border-[#E2E8F0] rounded-md h-6 w-1/2 flex items-center px-3">
-                  <FiSearch className="text-gray-400 text-xs mr-2" />
-                  <div className="h-2 bg-gray-200 rounded w-1/3"></div>
-                </div>
               </div>
-
-              {/* Dashboard Content */}
-              <div className="p-6 flex flex-col h-[calc(100%-40px)] gap-4">
-                {/* Top Row */}
-                <div className="flex justify-between items-center mb-2">
-                  <div className="h-4 w-32 bg-gray-200 rounded"></div>
-                  <div className="flex gap-2">
-                    <div className="h-6 w-24 bg-blue-50 border border-blue-100 rounded"></div>
-                    <div className="h-6 w-8 bg-[#F8FAFC] border border-[#E2E8F0] rounded"></div>
-                  </div>
-                </div>
-
-                {/* KPI Cards */}
-                <div className="grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-4 h-24 flex flex-col justify-between">
-                      <div className="flex justify-between items-start">
-                        <div className="h-2 w-16 bg-gray-300 rounded"></div>
-                        <div className={`w-6 h-6 rounded-md flex items-center justify-center ${i === 1 ? 'bg-blue-100 text-blue-600' : i === 2 ? 'bg-green-100 text-green-600' : 'bg-purple-100 text-purple-600'}`}>
-                          {i === 1 ? <FiTrendingUp className="text-xs" /> : i === 2 ? <FiShield className="text-xs" /> : <FiLayers className="text-xs" />}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="h-5 w-20 bg-gray-300 rounded mb-1"></div>
-                        <div className="h-2 w-12 bg-gray-200 rounded"></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Chart Area */}
-                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex-1 mt-2 p-4">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="h-3 w-24 bg-gray-300 rounded"></div>
-                    <div className="h-3 w-32 bg-gray-200 rounded"></div>
-                  </div>
-                  {/* Simulated Chart */}
-                  <div className="h-full flex items-end gap-2 pb-2">
-                    {[40, 70, 45, 90, 65, 55, 80, 50, 75, 60, 85, 95].map((h, i) => (
-                      <motion.div 
-                        key={i} 
-                        className="w-full bg-linear-to-t from-blue-600 to-sky-400 rounded-t-sm opacity-80"
-                        initial={{ height: 0 }}
-                        whileInView={{ height: `${h}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: i * 0.05 }}
-                      ></motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" 
+                alt="InsurePulse Dashboard Preview" 
+                className="w-full h-[calc(100%-40px)] object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
         </motion.div>
