@@ -37,6 +37,8 @@ export default function CTAWithSchedulePopup() {
     phone: "",
     notes: "",
   });
+  const [contactName, setContactName] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
 
   // Custom alert function
   const showCustomAlert = (message: string) => {
@@ -157,6 +159,24 @@ export default function CTAWithSchedulePopup() {
   const handleTimeSelect = (time: string) => {
     setSelectedTime(time);
     setStep(3);
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!contactName || !contactEmail) {
+      showCustomAlert("Please provide both your name and email.");
+      return;
+    }
+
+    const subject = encodeURIComponent("Kainovation Contact Request");
+    const body = encodeURIComponent(
+      `Name: ${contactName}\nEmail: ${contactEmail}\n\nI'm ready to innovate with Kainovation.`
+    );
+
+    window.location.href = `mailto:hello@kainovation.com?subject=${subject}&body=${body}`;
+    setContactName("");
+    setContactEmail("");
   };
 
   const handleFormChange = (field: string, value: string) => {
@@ -395,6 +415,52 @@ export default function CTAWithSchedulePopup() {
             >
               We engineer data systems and software that work at scale. Let&apos;s scope your project.
             </motion.p>
+
+            <motion.form
+              onSubmit={handleContactSubmit}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="max-w-3xl mx-auto mb-10 p-6 bg-white/10 border border-white/10 rounded-3xl backdrop-blur-xl"
+            >
+              <p className="text-base sm:text-lg text-blue-100 mb-6 leading-relaxed">
+                Ready to innovate? Send us a message and let&apos;s discuss
+                <br />architecting your competitive edge.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 mb-5">
+                <label className="block text-left">
+                  <span className="text-sm font-medium text-blue-100">Name</span>
+                  <input
+                    type="text"
+                    value={contactName}
+                    onChange={(e) => setContactName(e.target.value)}
+                    placeholder="Your name"
+                    className="mt-2 w-full rounded-2xl border border-white/20 bg-slate-950/50 px-4 py-3 text-white placeholder:text-slate-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  />
+                </label>
+                <label className="block text-left">
+                  <span className="text-sm font-medium text-blue-100">Email</span>
+                  <input
+                    type="email"
+                    value={contactEmail}
+                    onChange={(e) => setContactEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="mt-2 w-full rounded-2xl border border-white/20 bg-slate-950/50 px-4 py-3 text-white placeholder:text-slate-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  />
+                </label>
+              </div>
+              <motion.button
+                type="submit"
+                className="w-1/2 inline-flex justify-center items-center text-white font-bold bg-linear-to-r from-blue-500 to-indigo-600 py-3 px-6 sm:py-3.5 sm:px-7 md:py-4 md:px-8 rounded-full overflow-hidden shadow-lg sm:shadow-xl min-w-[180px] sm:min-w-[200px] text-sm sm:text-base"
+                whileHover={{
+                  scale: 1.02,
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Send Message
+              </motion.button>
+            </motion.form>
 
             {/* Contact Info */}
             <motion.div
